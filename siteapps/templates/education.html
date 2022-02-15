@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}
+    My Education
+{% endblock title%}
+{% block body%}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {% for education in educations %}
+                {{education.course}}
+                {{education.institue}}
+                {{education.joining}}
+                {{education.enddate}}
+                {{education.specification}}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock body%}
+{%block navitem%}
+<li><a href="{% url 'homepage'%}">About Me</a></li>
+<li><a href="{% url 'projects'%}">My Projects </a></li>
+<li><a href="{% url 'workexperience'%}">My Work Experience </a></li>
+<li><a href="{% url 'certification'%}">My Achivements And Certifications </a></li>
+{%endblock navitem%}
+<!-- =================================== -->
+   <!-- main data for qualification two education-->
+   <div class="qualification__data">
+    <!-- extra div -->
+    <div></div>
+    <div>
+        <span class="qualification__rounder"></span>
+        <span class="qualification__line"></span>
+    </div>
+    <div>
+        <h3 class="qualification__title">Web Design</h3>
+        <span class="qualification__subtitle">
+            Spain - Institute
+        </span>
+        <div class="qualification__calendar">
+            <i class="uil uil-calendar-alt"></i>
+            2009 - 2014
+        </div>
+    </div>
+    <!-- end of extra div -->
+</div>
+<!-- end of main data for qualification eductaion tow-->
+<!-- main data for qualification  three-->
+<div class="qualification__data">
+    <!-- extra div -->
+    <div>
+        <h3 class="qualification__title">Web Development</h3>
+        <span class="qualification__subtitle">
+            Peru- Institute
+        </span>
+        <div class="qualification__calendar">
+            <i class="uil uil-calendar-alt"></i>
+            2009 - 2014
+        </div>
+    </div>
+    <!-- end of extra div -->
+    <div>
+        <span class="qualification__rounder"></span>
+        <span class="qualification__line"></span>
+    </div>
+</div>
+<!-- end of main data for qualification three education-->
+<!-- main data for qualification four education -->
+<div class="qualification__data">
+    <!-- extra div -->
+    <div></div>
+    <div>
+        <span class="qualification__rounder"></span>
+        <!-- <span class="qualification__line"></span> -->
+    </div>
+    <div>
+        <h3 class="qualification__title">Computer Enginner</h3>
+        <span class="qualification__subtitle">
+            Peru - university
+        </span>
+        <div class="qualification__calendar">
+            <i class="uil uil-calendar-alt"></i>
+            2009 - 2014
+        </div>
+    </div>
+    <!-- end of extra div -->
+</div>
+<!-- end of main data for qualification four education-->

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    MySite
+{% endblock title %}
+{% block body %}
+<div class = "container">
+    <div class="row">
+        {% for data in person %}
+        <div class="image-col">    
+            <img src="/media/{{data.image}}" alt="profile image" width="300px" height = "auto">
+        </div>
+        <div class="data-col">
+                <label for="name"></label>
+                <p id="name">{{data.full_name}}</p>
+   
+                <label for="mailaddress"></label>
+                <p id = "mailaddress">{{data.mailaddress}}</p>
+            
+                <label for="address"></label>
+                <p id = "address">{{data.address}}</p>
+            
+                <label for="phone_number"></label>
+                <p id = "phone_number">{{data.phone_number}}</p>
+            
+                <label for="designation"></label>
+                <p id = "designation">{{data.designation}}</p>
+            
+                <label for="orgnization"></label>
+                <p id = "orgnization">{{data.orgnization}}</p>
+            
+                <label for="details"></label>
+                <p>{{data.joindate}}</p>            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{%block navitem%}
+<li><a href="{% url 'projects'%}">My Projects </a></li>
+<li><a href="{% url 'education'%}">My Education </a></li>
+<li><a href="{% url 'workexperience'%}">My Work Experience </a></li>
+<li><a href="{% url 'certification'%}">My Achivements And Certifications </a></li>
+{%endblock navitem%}

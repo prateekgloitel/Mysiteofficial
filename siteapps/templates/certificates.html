@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+    My Achivements/Certifications
+{% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {% for certificate in certificates %}
+                {{certificate.title}}
+                {{certificate.place}}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock body %}
+{%block navitem%}
+<li><a href="{% url 'homepage'%}">About Me</a></li>
+<li><a href="{% url 'projects'%}">My Projects </a></li>
+<li><a href="{% url 'education'%}">My Education </a></li>
+<li><a href="{% url 'workexperience'%}">My Work Experience </a></li>
+{%endblock navitem%}
