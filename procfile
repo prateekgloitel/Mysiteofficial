@@ -1,1 +1,2 @@
-web: gunicorn prateeklodhisite.wsgi --log-file -
+
+web: gunicorn app:app
