@@ -1,0 +1,1 @@
+web: gunicorn prateeklodhisite.wsgi --log-file -
