@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.core.validators import RegexValidator
 from django.db import models
 
@@ -12,6 +13,8 @@ class User(models.Model):
     designation = models.CharField(max_length=100,null = True, blank= True)
     orgnization = models.CharField(max_length=150,null = True,blank = True)
     joindate = models.DateField(auto_now_add= False,auto_now = False, null = True,blank= True)
+    about_me = models.CharField(max_length=500 , null = True, blank= True)
+    about_image = models.ImageField(upload_to ='aboutimage/%y',null=True,blank = True)
     def __str__(self) -> str:
         return self.full_name
 

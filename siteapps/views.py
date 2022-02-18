@@ -1,5 +1,6 @@
 
 from django.shortcuts import render
+from numpy import append
 from .models import *
 # Create your views here.
 
@@ -9,11 +10,28 @@ def home(request):
     workdetails = WorkExperience.objects.all()
     persondetails = User.objects.all()
     projectdetails = Project.objects.all()
+    intrests = Intrest.objects.all()
+    work = workdetails.count()
+    project = projectdetails.count()
+    zigzag = []
+    count = 0
+    for eduction in educationdetails:
+        if eduction.id%2==0:
+            zig = True
+        else:
+            zig = False
+        count += 1
+        zigzag.append(zig)
+    print(zigzag,count)
     profiledata = {
         'educationdetails': educationdetails,
         'workdetails':workdetails,
         'person':persondetails,
         'projects':projectdetails,
+        'workcount':work,
+        'projectcount':project,
+        'zigzag':zigzag,
+        'intrests':intrests,
     }
     return render(request, 'index.html', profiledata)
 
