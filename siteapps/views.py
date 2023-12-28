@@ -1,7 +1,9 @@
 
 from django.shortcuts import render
 from .models import *
+from django.contrib.admin import models
 # Create your views here.
+from django.contrib.auth.models import User
 
 
 def home(request):
@@ -20,6 +22,7 @@ def home(request):
         'workcount':work,
         'projectcount':project,
         'intrests':intrests,
+
     }
     return render(request, 'index.html', profiledata)
 
